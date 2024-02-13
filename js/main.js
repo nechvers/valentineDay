@@ -18,7 +18,9 @@ linkNo.addEventListener("mouseover", function () {
   }
 });
 
-linkNo.addEventListener('click', alert('охуела?'));
+linkNo.addEventListener("click", () => {
+  alert('охуела?');
+});
 
 function moveElementRandomly(element) {
   // Генерируем случайные значения для смещения по осям X и Y

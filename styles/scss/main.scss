@@ -15,22 +15,40 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+@mixin fluid-image( $min: 100, $max: 300 ) {
+	width: clamp( #{$min}px, #{$max / 400 * 100}vw, #{$max}px);
+}
 .cute-cat {
-  width: 300px;
-  height: 250px;
+  @include fluid-image(100, 300);
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin fluid-text( $min: 16, $max: 48 ) {
+	font-size: clamp( #{$min}px, #{$max / 700 * 100}vw, #{$max}px);
+}
+
+// @mixin mobile {
+//   @media (min-width: 1024px) {
+//     @content;
+//   }
+// }
+
 .title {
+  width: 90vw;
   margin: 0;
   text-align: center;
   position: absolute;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 48px;
+  @include fluid-text(16, 48);
+  // @include mobile{
+  //   top: 5%
+  // }
   color: #ba7b6e;
 }
 

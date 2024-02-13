@@ -1,6 +1,8 @@
 const linkNo = document.getElementById("linkNo");
 const linkYes = document.getElementById("linkYes");
 const links = document.getElementById("links");
+const image = document.querySelector('.cute-cat');
+const title = document.querySelector('.title');
 const body = document.body;
 let countMouseOver = 0;
 
@@ -18,9 +20,13 @@ linkNo.addEventListener("mouseover", function () {
   }
 });
 
-linkNo.addEventListener("click", () => {
-  alert('охуела?');
-});
+linkYes.addEventListener('click', () => {
+  image.src = 'images/white-cute-cat-hearts.gif';
+  title.innerHTML = 'С праздником, малышка, я тебя очень сильно люблю &#128152;';
+  linkYes.remove();
+  linkNo.remove();
+  links.remove();
+})
 
 function moveElementRandomly(element) {
   // Генерируем случайные значения для смещения по осям X и Y

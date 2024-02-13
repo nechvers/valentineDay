@@ -9,7 +9,6 @@ linkNo.addEventListener("mouseover", function () {
   linkYes.style.left = "0%";
   moveElementRandomly(linkNo);
   countMouseOver++;
-  console.log(countMouseOver);
   if (countMouseOver === 20) {
     links.appendChild(linkNo);
     linkNo.style.top = "0%";
@@ -18,6 +17,8 @@ linkNo.addEventListener("mouseover", function () {
     linkNo.style.zIndex = '1'
   }
 });
+
+linkNo.addEventListener("click", alert('охуела?'));
 
 // linkNo.addEventListener('click', alert('охуела?'));
 function moveElementRandomly(element) {
